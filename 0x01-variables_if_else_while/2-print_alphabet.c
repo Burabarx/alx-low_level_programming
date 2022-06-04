@@ -1,33 +1,16 @@
 #include <stdio.h>
-
-void main()
-
+/**
+ *main - Entry point
+ *Description: random number in n +ve/-ve
+ *Return: Always 0 (Success)
+ */
+int main(void)
 {
-
-        int ch;
-
-
- 
-        clrscr();
-
-        printf(“Print all uppercase letters followed by all lowercase letters on the next line :\n”);
-
-        /* print uppercase letters */
-
-        for (ch= ‘A’; ch<= ‘Z’; ch++)
-
-             putchar(ch);
-
-             putchar (‘\n’ ) ;
-
-             /* print lowercase letters */
-
-             for (ch= ‘a’; ch<= ‘z’; ch++)
-
-                  putchar(ch);
-
-                  putchar (‘\n’) ;
-
-                  getch();
-
+int firstLetter, n;
+for (firstLetter = 97, n = 1; n < 27; firstLetter++, n++)
+{
+putchar(firstLetter);
+}
+putchar(10);
+return (0);
 }
