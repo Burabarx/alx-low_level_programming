@@ -1,4 +1,4 @@
-#include "software.s"
+#include "holberton.h"
 /**
  * main - Entry point
  *
@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char *sh = "Software";
+	char *sh = "Holberton";
 
 	while (*sh)
 	{
