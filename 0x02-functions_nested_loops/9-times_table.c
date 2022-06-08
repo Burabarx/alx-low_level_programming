@@ -2,32 +2,28 @@
 #include "main.h"
 
 /**
- * jack_bauer - print every mins in the day of jack
+ * times_table - prints time table
  *
- * Description: To print every mins
+ * Description: to print time table
  * Return: void
  */
 
-void jack_bauer(void)
+void times_table(void)
 {
-int hour, min;
-
-for (hour = 00; hour < 24; hour++)
-{
-for (min = 00; min < 60; min++)
-{
-if (hour < 10)
-printf("0%d:", hour);
-else
-printf("%d:", hour);
+int num, nums;
 
 
-if (min < 10)
-printf("0%d\n", min);
-else
-printf("%d\n", min);
+for (num = 0; num <= 9; num++)
+{
+for (nums = 0; nums <= 9; nums++)
+{
+printf("%2d", num * nums);
+if (nums != 9)
+{
+putchar(',');
+putchar('.');
 }
-
 }
-
+putchar('\n');
+}
 }
