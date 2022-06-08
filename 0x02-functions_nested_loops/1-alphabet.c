@@ -1,21 +1,14 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * print_alphabet - Function that prints alphabets
- *
- * Descripion: to print alphabets
- * Return: Always 0
+ * print_alphabet - prints the alphabet in lowercase, followed by a new line.
  */
-
 void print_alphabet(void)
 {
-int count;
+	char letter;
 
-for (count = 'a'; count <= 'z'; count++)
-{
-_putchar(count);
-}
-_putchar('\n');
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
 
+	_putchar('\n');
 }
