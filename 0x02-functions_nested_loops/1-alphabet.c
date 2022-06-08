@@ -1,19 +1,21 @@
+#include "holberton.h"
 #include "main.h"
 
 /**
- * main - check the code for Holberton School students.
+ * print_alphabet - Function that prints alphabets
  *
- * Return: Always 0.
+ * Descripion: to print alphabets
+ * Return: Always 0
  */
-int main(void)
+
+void print_alphabet(void)
 {
+int count;
 
-      int count;
-
-      for (count = 'a'; count <= 'z'; count++)
-        
-          putchar(count);
-
-      putchar('\n');
+for (count = 'a'; count <= 'z'; count++)
+{
+_putchar(count);
+}
+_putchar('\n');
 
 }
