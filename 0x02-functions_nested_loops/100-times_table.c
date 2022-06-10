@@ -1,51 +1,53 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_times_table - Print the n times table, starting from 0
- * @n: The times table to print
- *
- * Return: Nothing
- */
+  * print_times_table - Prints a multiplication table up to param
+  * @n: The number to be treated
+  *
+  * Return: Number matrix
+  */
 void print_times_table(int n)
 {
-	int x, y, mult, one, ten, hund;
+	int x, y, z;
 
-	x = 0;
-	if (n >= 0 && n <= 15)
+	if (n >= 0 && n <= 14)
 	{
-		while (x <= n)
+		for (x = 0; x <= n; x++)
 		{
-			y = 0;
-			while (y <= n)
+			for (y = 0; y <= n; y++)
 			{
-				mult = x * y;
-				one = mult % 10;
-				ten = mult % 100 / 10;
-				hund = mult / 100;
-				if (hund == 0 && y != 0)
-				{
-					_putchar(' ');
-					if (ten == 0)
-						_putchar(' ');
-					else
-						_putchar(ten + '0');
-				}
-				else if (hund != 0)
-				{
-					_putchar(hund + '0');
-					_putchar(ten + '0');
-				}
-				_putchar(one + '0');
-				if (y != n)
+				z = x * y;
+				if (z > 99)
 				{
 					_putchar(',');
-					_putchar(' ');
+					_putchar(32);
+					_putchar((z / 100) + '0');
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
 				}
-				y++;
+				else if (z > 9)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar(32);
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else
+				{
+					if (y != 0)
+					{
+						_putchar(',');
+						_putchar(32);
+						_putchar(32);
+						_putchar(32);
+					}
+					_putchar(z + '0');
+				}
 			}
 			_putchar('\n');
-			x++;
 		}
 	}
 }
+
