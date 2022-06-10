@@ -2,52 +2,71 @@
 #include <stdio.h>
 
 /**
-  * print_times_table - Prints a multiplication table up to param
-  * @n: The number to be treated
-  *
-  * Return: Number matrix
-  */
+ * putThreeDigits - print 3 digits
+ * @prod: product of main loop
+ */
+void putThreeDigits(int prod)
+{
+	_putchar(prod / 100 + 48);
+	_putchar((prod / 10) % 10 + 48);
+	_putchar(prod % 10 + 48);
+}
+
+/**
+ * putTwoDigits - print 2 digits
+ * @prod: product of main loop
+ */
+void putTwoDigits(int prod)
+{
+	_putchar(' ');
+	_putchar(prod / 10 + 48);
+	_putchar(prod % 10 + 48);
+}
+/**
+ * putOneDigit - print 1 digit
+ * @prod: product of main loop
+ */
+void putOneDigit(int prod)
+{
+	_putchar(' ');
+	_putchar(' ');
+	_putchar(prod + 48);
+}
+
+/**
+ * print_times_table - print multiplication table for factor of n
+ * @n: integer n
+ */
 void print_times_table(int n)
 {
-	int x, y, z;
+	int i, j, prod;
 
-	if (n >= 0 && n <= 14)
+	if (n < 16 && n >= 0)
 	{
-		for (x = 0; x <= n; x++)
+		for (i = 0; i <= n; i++)
 		{
-			for (y = 0; y <= n; y++)
+			for (j = 0; j <= n; j++)
 			{
-				z = x * y;
-				if (z > 99)
+				if (j == 0)
 				{
-					_putchar(',');
-					_putchar(32);
-					_putchar((z / 100) + '0');
-					_putchar(((z / 10) % 10) + '0');
-					_putchar((z % 10) + '0');
+					_putchar(48);
+					continue;
 				}
-				else if (z > 9)
+				prod = i * j;
+				_putchar(',');
+				_putchar(' ');
+				if (prod >= 100)
 				{
-					_putchar(',');
-					_putchar(32);
-					_putchar(32);
-					_putchar(((z / 10) % 10) + '0');
-					_putchar((z % 10) + '0');
-				}
-				else
+					putThreeDigits(prod);
+				} else if (prod >= 10)
 				{
-					if (y != 0)
-					{
-						_putchar(',');
-						_putchar(32);
-						_putchar(32);
-						_putchar(32);
-					}
-					_putchar(z + '0');
+					putTwoDigits(prod);
+				} else
+				{
+					putOneDigit(prod);
 				}
 			}
-			_putchar('\n');
+		_putchar('\n');
 		}
 	}
 }
-
